@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const images = [
   "/gallery/gallery-1.webp",
   "/gallery/gallery-2.webp",
-  "/gallery/gallery-3.webp",
+  "/gallery/gallery-3.png",
   "/gallery/gallery-4.webp",
 ];
 

@@ -30,10 +30,10 @@ function useTypewriter(text: string, speed = 60, onDone?: () => void) {
 
 /* ---------------- IMAGES ---------------- */
 const images = [
-  "/hero/hero-1.jpg",
-  "/hero/hero-2.webp",
-  "/hero/hero-3.webp",
-  "/hero/hero-4.webp",
+  "/hero/hero-1.png",
+  "/hero/hero-2.png",
+  "/hero/hero-3.png",
+  "/hero/hero-4.png",
 ];
 
 /* ---------------- MOBILE FOCAL POINTS ---------------- */
@@ -101,13 +101,16 @@ export default function Hero() {
     <section className="relative min-h-screen overflow-hidden">
 
       {/* ---------------- BACKGROUND ---------------- */}
-      <div className="absolute inset-0 flex items-center justify-center bg-black">
+      <div className="absolute inset-0">
         <AnimatePresence mode="sync">
-          <motion.img
+          <motion.div
             key={current}
-            src={images[current]}
-            alt="hero"
-            className="h-full w-full object-contain md:object-cover"
+            className="absolute inset-0 bg-no-repeat bg-cover md:bg-center"
+            style={{
+              backgroundImage: `url(${images[current]})`,
+              backgroundPosition: imagePositions[current],
+              backgroundSize: "cover",
+            }}
             initial={{ opacity: 0, scale: 1.1 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.05 }}
@@ -118,6 +121,7 @@ export default function Hero() {
           />
         </AnimatePresence>
       </div>
+
 
       {/* OVERLAYS */}
       <div className="absolute inset-0 bg-black/65" />
