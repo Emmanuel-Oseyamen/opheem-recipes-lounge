@@ -108,9 +108,9 @@ export default function Hero() {
             src={images[current]}
             alt="hero"
             className="h-full w-full object-contain md:object-cover"
-            initial={{ opacity: 0, scale: 1.05 }}
+            initial={{ opacity: 0, scale: 1.1 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.02 }}
+            exit={{ opacity: 0, scale: 1.05 }}
             transition={{
               duration: 1.6,
               ease: [0.4, 0, 0.2, 1],
