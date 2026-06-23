@@ -103,13 +103,13 @@ export default function Hero() {
       {/* ---------------- BACKGROUND ---------------- */}
       <div className="absolute inset-0">
         <AnimatePresence mode="sync">
-          <motion.div
+          <motion.img
             key={current}
-            className="absolute inset-0 bg-no-repeat bg-cover md:bg-center"
+            src={images[current]}
+            alt="hero background"
+            className="absolute inset-0 h-full w-full object-cover md:object-cover"
             style={{
-              backgroundImage: `url(${images[current]})`,
-              backgroundPosition: imagePositions[current],
-              backgroundSize: "cover",
+              objectPosition: imagePositions[current],
             }}
             initial={{ opacity: 0, scale: 1.1 }}
             animate={{ opacity: 1, scale: 1 }}
