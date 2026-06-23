@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 
 /* ---------------- TYPEWRITER ---------------- */
 function useTypewriter(text: string, speed = 60, onDone?: () => void) {
@@ -77,7 +78,7 @@ export default function Hero() {
   }, []);
 
   /* ---------------- WORD ANIMATION ---------------- */
-  const wordVariant = {
+  const wordVariant: Variants = {
     hidden: {
       opacity: 0,
       y: -30,
@@ -89,7 +90,7 @@ export default function Hero() {
       scale: 1,
       transition: {
         delay: i * 0.22,
-        type: "spring",
+        type: "spring" as const,
         stiffness: 220,
         damping: 18,
       },
