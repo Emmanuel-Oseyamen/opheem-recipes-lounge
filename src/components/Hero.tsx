@@ -101,19 +101,16 @@ export default function Hero() {
     <section className="relative min-h-screen overflow-hidden">
 
       {/* ---------------- BACKGROUND ---------------- */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 flex items-center justify-center bg-black">
         <AnimatePresence mode="sync">
           <motion.img
             key={current}
             src={images[current]}
-            alt="hero background"
-            className="absolute inset-0 h-full w-full object-cover md:object-cover"
-            style={{
-              objectPosition: imagePositions[current],
-            }}
-            initial={{ opacity: 0, scale: 1.1 }}
+            alt="hero"
+            className="h-full w-full object-contain md:object-cover"
+            initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.05 }}
+            exit={{ opacity: 0, scale: 1.02 }}
             transition={{
               duration: 1.6,
               ease: [0.4, 0, 0.2, 1],
