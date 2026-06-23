@@ -36,14 +36,6 @@ const images = [
   "/hero/hero-4.png",
 ];
 
-/* ---------------- MOBILE FOCAL POINTS ---------------- */
-const imagePositions = [
-  "center 30%",
-  "center 40%",
-  "center 50%",
-  "center 35%",
-];
-
 /* ---------------- COMPONENT ---------------- */
 export default function Hero() {
   const [current, setCurrent] = useState(0);
@@ -102,26 +94,23 @@ export default function Hero() {
 
       {/* ---------------- BACKGROUND ---------------- */}
       <div className="absolute inset-0">
-        <AnimatePresence mode="sync">
-          <motion.div
-            key={current}
-            className="absolute inset-0 bg-no-repeat bg-cover md:bg-center"
-            style={{
-              backgroundImage: `url(${images[current]})`,
-              backgroundPosition: imagePositions[current],
-              backgroundSize: "cover",
+        {images.map((image, index) => (
+          <motion.img
+            key={image}
+            src={image}
+            alt=""
+            className="absolute inset-0 h-full w-full object-contain md:object-cover"
+            animate={{
+              opacity: current === index ? 1 : 0,
+              scale: current === index ? 1 : 1.03,
             }}
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.05 }}
             transition={{
-              duration: 1.6,
-              ease: [0.4, 0, 0.2, 1],
+              duration: 1.2,
+              ease: "easeInOut",
             }}
           />
-        </AnimatePresence>
+        ))}
       </div>
-
 
       {/* OVERLAYS */}
       <div className="absolute inset-0 bg-black/65" />
