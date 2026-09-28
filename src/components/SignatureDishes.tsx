@@ -1,4 +1,3 @@
-```jsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -193,4 +192,4 @@ export default function SignatureDishes() {
     </section>
   );
 }
-```
+
