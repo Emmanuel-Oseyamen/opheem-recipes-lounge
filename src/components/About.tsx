@@ -91,7 +91,7 @@ export default function About() {
             {/* Main image */}
             <div className="relative aspect-[4/5] overflow-hidden bg-[#151515]">
               <Image
-                src="/about.jpg"
+                src="/gallery/gallery-3.png"
                 alt="Opheem Recipes & Lounge"
                 fill
                 className="object-cover transition-transform duration-1000 hover:scale-105"
